@@ -265,3 +265,9 @@ a {
         margin-top: -200px;
     }
 }
+
+.insta_image {
+    background-image: url(images/insta_image.jpg);
+    background-size: 100%;
+    padding-top: 100%;
+}
