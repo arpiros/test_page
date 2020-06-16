@@ -23,8 +23,13 @@
 
 body,
 h1,
+h2,
+h3,
 p,
-ul {
+ul,
+dl,
+dt,
+dd {
     margin: 0;
     padding: 0;
 }
@@ -33,7 +38,9 @@ li {
     list-style-type: none;
 }
 
-h1 {
+h1,
+h2,
+h3 {
     font-size: 100%;
     font-weight: normal;
 }
@@ -58,11 +65,24 @@ a {
 
 .profile {
     padding: 7%;
+    /* min-height: 5000px; */
+    /* for scroll test */
 }
 
 .profile-header,
 .profile-section {
-    padding-bottom: 7%;
+    padding-bottom: 5%;
+}
+
+.profile-section h2 {
+    border-top: 3px solid;
+    color: orangered;
+    margin-bottom: 20px;
+    padding: 0.5em 0;
+    position: sticky;
+    top: 0;
+    background-color: #111;
+    box-shadow: 0 0 50px 10px #111;
 }
 
 .name {
@@ -71,6 +91,10 @@ a {
     font-style: italic;
     margin-bottom: 40px;
     font-family: 'Sriracha', cursive;
+    position: sticky;
+    top: -2em;
+    background-color: #111;
+    box-shadow: 0 0 50px 10px #111;
 }
 
 .name-job {
@@ -135,4 +159,109 @@ a {
 
 .icons a:hover {
     background-position-y: bottom;
+}
+
+.timeline {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.timeline li {
+    padding-bottom: 30px;
+}
+
+.timeline li:last-child {
+    padding-bottom: 0;
+}
+
+.timeline li h3 {
+    color: orange;
+    float: left;
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    padding-top: 0.2em;
+    margin-right: 0.5em;
+    margin-top: 0.2em;
+    border-top: 3px solid;
+}
+
+.graph li {
+    background-color: dodgerblue;
+    color: white;
+    padding: 0.5em 1em;
+    margin: 0.4em 0;
+    border-radius: 50px;
+    box-sizing: border-box;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(60, 57, 85, 1) 0%, rgba(0, 212, 255, 1) 100%);
+}
+
+.graph li::before {
+    content: attr(data-score);
+    float: right;
+}
+
+.graph li[data-score="50%"] {
+    width: 50%;
+}
+
+.graph li[data-score="60%"] {
+    width: 60%;
+}
+
+.graph li[data-score="70%"] {
+    width: 70%;
+}
+
+.graph li[data-score="80%"] {
+    width: 80%;
+}
+
+.graph li[data-score="90%"] {
+    width: 90%;
+}
+
+.graph li[data-score="100%"] {
+    width: 100%;
+}
+
+.list dt {
+    color: orange;
+    float: left;
+    width: 4em;
+}
+
+.list dd {
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .portrait {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 60vw;
+        height: 100vh;
+        padding: 0;
+    }
+    .profile {
+        padding-top: 0;
+        /* padding: ; */
+        margin-left: 55vw;
+    }
+    .name {
+        font-size: 4vw;
+    }
+    .timeline {
+        margin: 0 -10px;
+    }
+    .timeline li {
+        width: 50%;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    .timeline li:nth-child(even) {
+        margin-left: auto;
+        margin-top: -200px;
+    }
 }
